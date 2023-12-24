@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .game{
+            width: 255px;
+            text-align: center;
+            font-family: sans-serif;
+            color: #fff;
+            margin: auto;
+            font-weight: 500;
+
+        }
+        .title{
+            background: #f25;
+            padding: 5px 0;
+            margin: 5px 0;
+
+        }
+        span{
+            color:#fa0;
+        }
+        .square{
+            width: 80px;
+            height: 80px;
+            background: #fa0;
+            float: left;
+            margin: 2px;
+            font-size: 50px;
+            
+    background-image: linear-gradient(black 0 0);
+    background-size: 200% .08em;
+    background-position: 200% 100%;
+    background-repeat: no-repeat;
+    transition: background-size .3s, background-position .3s .3s;
+        }
+        .square:hover{
+            transition: background-size .3s .3s, background-position .3s;
+    background-size: 200% 100%;
+    background-position: 100% 100%;
+    cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="game">
+        <div class="title"><span>x o game</span></div>
+        <div class="square" id="item1" onclick="game(this.id)"></div>
+        <div class="square" id="item2" onclick="game(this.id)"></div>
+        <div class="square" id="item3" onclick="game(this.id)"></div>
+        <div class="square" id="item4" onclick="game(this.id)"></div>
+        <div class="square" id="item5" onclick="game(this.id)"></div>
+        <div class="square" id="item6" onclick="game(this.id)"></div>
+        <div class="square" id="item7" onclick="game(this.id)"></div>
+        <div class="square" id="item8" onclick="game(this.id)"></div>
+        <div class="square" id="item9" onclick="game(this.id)"></div>
+    </div>
+    <script>
+        let turn='x'
+        let title=document.querySelector('.title')
+
+        function game(id){
+            let element=document.getElementById(id)
+            if(turn=='x'&&element.innerHTML==''){
+                element.innerHTML='x'
+                turn='o'
+                title.innerHTML='o'
+
+            }
+            else if(turn=='o'&&element.innerHTML==''){
+                element.innerHTML='o'
+                turn='x'
+                title.innerHTML='x'
+            }
+        }
+    </script>
+</body>
+
+</html>
